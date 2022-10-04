@@ -55,10 +55,10 @@ $(document).ready(function () {
 	$('#grid-tab-div').prepend('<img id="battle-map" src="images/maps/swamp.jpg">');
 	
 	//test add unit
-	createUnit('Sorin','#sq5x3','cyan', 'Sorin.JPG');
+	createUnit('Sorin','#sq5x3','cyan', 'Sorin.jpg');
 	moveUnit(null,'#sq5x3',unit_arr[0]);
 	//test add 2nd unit
-	createUnit('Merla','#sq9x4','purple','Merla.JPG');
+	createUnit('Merla','#sq9x4','purple','Merla.jpg');
 	moveUnit(null,'#sq9x4',unit_arr[1]);
 	//test add 3rd unit
 	createUnit('Katarina','#sq10x2','teal','Katarina.jpg');
