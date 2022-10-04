@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Battle Grid</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body>
+
+<div id="create-unit-div" class="create-menu" hidden>
+	<h2 class="sub-menu-h2">Create New Unit</h2>
+	<div style="height: calc(100% - 50px); width: 100%; background-color: #bcabdc; box-sizing: border-box; padding: 10px;">
+		<span class="sub-menu-lbl">Unit Name</span>
+		<input type="text" class="sub-menu-txt" id="txt-unit">
+		<span class="sub-menu-lbl">Color</span>
+		<input type="color" id="col-unit" name="favcolor" class="sub-menu-color" value="#ff0000">
+		<!--<span class="sub-menu-lbl">Starting Location</span>
+		<input type="text" class="sub-menu-txt" id="txt-loc-letter" maxlength="1" value="A" style="display: inline-block; width: 33px; margin-right: 20px;">
+		<input type="text" class="sub-menu-txt" id="txt-loc-number" maxlength="2" value="1" style="display: inline-block; width: 33px;">-->
+		<span class="sub-menu-lbl">Select Picture</span>
+		<div id="new-unit-pic" class="ctrl-player-pic" style="width: 90px; height: 79px; display: block; margin: 0 auto; float: none;">
+			<img height="75px" id="new-unit-img" src="images/units/blank.jpg">
+		</div>
+	</div>
+	<div>
+		<button class="btn-player-cmd" id="btn-add-unit" style="width: calc(50% - 10px); margin-top: 5px;">Add new unit</button><!-- inline space
+		--><span style="display: inline-block; width: 20px;"></span><!--
+		--><button class="btn-player-cmd" id="btn-cancel-unit" style="width: calc(50% - 10px); margin-top: 5px;">Cancel</button>
+	</div>
+</div>
+
+<div id="create-map-div" class="create-menu" style="top: 10px; left: 20px; right: 20px; bottom: 20px; width: auto;" hidden>
+	<div style="height: 100%; width: 100%; background-color: #bcabdc; box-sizing: border-box; padding: 10px; overflow-y: auto;">
+		<div class="map-canvas-container">
+			<div id="map-grid-tab-div" class="map-grid-div"></div>
+			<canvas class="map-paint-canvas" id="map-canvas" width="1081" height="649"></canvas>
+		</div><!--
+		--><div style="display: inline-block; vertical-align: top; width: calc(100% - 1100px); min-width: 150px;"> <!-- This 2nd div is on right hand side of map-canvas-container -->
+			<h2 class="sub-menu-h2" style="background-color: #7d5096; padding: 5px;">Create New Map</h2>
+			<input type="color"  class="map-js-color-picker  color-picker">
+			<input type="range" class="map-js-line-range" min="1" max="72" value="3">
+			<label class="map-js-range-value">3</label>Px
+			<br><br>
+			<div style="display: block;">
+				<button class="btn-player-cmd" id="btn-use-map" style="width: calc(50% - 10px); margin-top: 5px;">Use new map</button><!-- inline space
+				--><span style="display: inline-block; width: 20px;"></span><!--
+				--><button class="btn-player-cmd" id="btn-cancel-map" style="width: calc(50% - 10px); margin-top: 5px;">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="grid-div">
+	<div id="grid-tab-div"><!-- center align div contains table (relative) and img of map (absolute) -->
+	</div>
+</div>
+
+<div id="menu-div" class="ctrl-menu">
+<div id="player-pic" class="ctrl-player-pic">
+	<img height="136px" hidden>
+</div>
+<div id="group-ctrl-btn">
+	<span class="lbl-name"></span>
+	<button class="btn-player-cmd" id="btn-move">Move</button>
+	<button class="btn-player-cmd" id="btn-rotate-left">Rotate left</button>
+	<button class="btn-player-cmd" id="btn-rotate-right">Rotate right</button>
+	<button class="btn-player-cmd" id="btn-delete">Delete unit</button>
+</div>
+
+<div id="unit-tray">
+</div>
+
+<div id="cmd-tray">
+	<button class="btn-player-cmd" id="btn-create-map">Create new map</button>
+	<button class="btn-player-cmd" id="btn-load-map">Load map</button><input type="file" id="upload-map" accept=".jpg,.png" name="myfile" style="display: none;">
+	<button class="btn-player-cmd" id="btn-create-unit">Create unit</button>
+</div>
+
+</div>
+
+</body>
+</html>

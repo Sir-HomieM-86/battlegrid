@@ -1,0 +1,334 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	/*background-color: skyblue;*/
+}
+
+/* Main parent divs */
+
+#grid-div {
+	height: calc(100% - 150px);
+	width: 100%;
+	padding: 30px;
+	text-align: center;
+	box-sizing: border-box;
+	overflow: auto;
+	background-color: #cfebf7;
+}
+
+#grid-tab-div {
+	position: relative;
+}
+
+.ctrl-menu {
+	position: relative;
+	height: 150px;
+	width: 100%;
+	padding: 5px;
+	background-color: /*#d1bff5*/ #bcabdc;
+	box-shadow: 0 -1px 0 #7d5096;
+	box-sizing: border-box;
+}
+
+.create-menu {
+	position: fixed;
+	top: 50px;
+	left: calc(50% - 250px);
+	width: 500px;
+	bottom: 170px;
+	padding: 20px;
+	background-color: /*#bcabdc*/ #7d5096;
+	border-radius: 20px;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px 3px black;
+	z-index: 20;
+}
+
+/* battle grid table */
+
+.battleGridStyle {
+	display: inline-block;
+	position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  /*width: 100%;*/
+  z-index: 5;
+}
+
+.battleGridStyle td, .battleGridStyle th {
+  border: 1px solid black;
+  padding: 1px;
+  width: 54px;
+  height: 54px;
+  vertical-align: middle;
+  text-align: center;
+  box-sizing: border-box;
+  /*padding: 8px;*/
+}
+
+.battleGridStyle tr{background-color: rgba(235,235,235,0.2);}
+/*#tabBattleGrid tr:nth-child(even){background-color: rgba(225,225,225,0.5);}*/
+
+/*.sq-div:hover {
+	background-color: skyblue;
+}*/
+
+
+/* control menu items */
+
+.ctrl-player-pic {
+	display: inline-block;
+	float: left;
+	border: 2px inset black;
+	height: 100%;
+	width: 150px;
+	background-color: black;
+	text-align: center;
+	box-sizing: border-box;
+	margin-right: 5px;
+}
+
+.lbl-name {
+	display: block;
+	/*vertical-align: top;*/
+	background-color: #7d5096;
+	color: white;
+	width: 100%;
+	border: 1px solid black;
+	height: 20px;
+	padding: 2px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	font-family: sans-serif, arial;
+	box-sizing: border-box;
+}
+
+#group-ctrl-btn {
+	display: inline-block;
+	float: left;
+	height: 100%;
+	width: 100px;
+	padding: 2px;
+	margin-right: 70px;
+}
+
+.btn-player-cmd {
+	width: 100%;
+	box-sizing: border-box;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	text-decoration:none;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.btn-player-cmd:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+
+/* unit tray styles */
+
+#unit-tray {
+	display: inline-block;
+	vertical-align: top;
+	background-color: #7d5096;
+	height: 100%;
+	width: calc(100% - 580px);
+	overflow-x: scroll;
+	white-space: nowrap;
+	border: 2px inset black;
+	box-sizing: border-box;
+	margin-right: 70px;
+	padding: 5px;
+}
+
+.unit-card {
+	display: inline-block;
+	vertical-align: top;
+	height: 100px;
+	width: 100px;
+	border: 2px solid black;
+	margin-right: 5px;
+	background-color: #476e9e;
+	box-sizing: border-box;
+	padding: 3px;
+}
+
+.unit-card-pic {
+	display: block;
+	/*border: 2px inset black;*/
+	height: 75px;
+	width: 100%;
+	background-color: black;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.unitCardPanel {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 15px; /* 15 + 75 (unitCard image) = 90 (10px used by padding and border) */
+	/*background-color: pink;*/
+}
+
+.arrow-right {
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid purple;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.arrow-left {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-right: 10px solid purple;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.arrow-right:hover {cursor: pointer;}
+
+.arrow-left:hover {cursor: pointer;}
+
+/* Unit square styling */
+
+.sq-unit {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	padding: 1px;
+	border: 5px solid black;
+	border-top: 5px solid red;
+	border-radius: 50%;
+	background-color: cyan;/*will change for specific unit*/
+	/*transform: rotate(135deg);*/
+}
+
+.selectedUnit {
+	background-color: #66FF00;
+}
+
+.selectedUnitCard {
+	background-color: lightgreen;
+	border-color: green;
+}
+
+/* battle map styling */
+
+#battle-map {
+	position: absolute;
+	z-index: 2;
+}
+
+/* command button tray */
+#cmd-tray {
+	display: inline-block;
+	vertical-align: top;
+	/*background-color: #7d5096;*/
+	height: 100%;
+	width: 175px;
+	border-left: 2px solid black;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+/* Sub menu form styles */
+
+.sub-menu-h2 {
+	color: white;
+	line-height: 100%;
+	font-size: 20px;
+	font-family: arial;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.sub-menu-lbl {
+	display: block;
+	color: white;
+	background-color: /*#bcabdc*/ #7d5096;
+	height: 20px;
+	width: 100%;
+	padding-left: 10px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-family: arial;
+}
+
+.sub-menu-txt {
+	display: block;
+	background-color: #476e9e;
+	color: white;
+	width: 100%;
+	height: 30px;
+	padding: 3px;
+	font-size: 13px;
+	font-family: arial, sans-serif;
+	font-weight: bold;
+	padding-left: 8px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	border: 2px solid black;
+}
+
+.sub-menu-txt:focus {
+	border-color: #6f0;
+	outline: none;
+}
+
+.sub-menu-color {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+/* new map styles */
+
+#map-grid-tab-div {
+	pointer-events: none;
+}
+
+.map-canvas-container {
+	display: inline-block;
+	position: relative;
+	border: 2px black solid;
+	padding: 0;
+	margin-right: 10px;
+}
+
+.map-paint-canvas {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 4;
+}
+
+.map-grid-div {
+	position: absolute;
+	/*background-color: blue;*/
+	width: 1081px;
+	height: 649px;
+	z-index: 5;
+}
+
+.map-color-picker {
+  margin: 1rem 1rem 0 1rem;
+}
+
